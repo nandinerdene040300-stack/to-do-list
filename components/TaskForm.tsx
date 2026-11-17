@@ -28,9 +28,9 @@ export const TaskForm = ({ onCreateTask }: TaskFormProps) => {
         <button
           type="submit"
           disabled={!taskTitle.trim()}
-          className="translate duration-300 ease-in active:scale-90 disabled:cursor-not-allowed bg-[#D8E5DD] rounded-xl py-[13.5px] px-[21.5px] gap-2 flex justify-center items-center text-[#63796C] font-semibold"
+          className={`translate duration-300 ease-in active:scale-90 disabled:cursor-not-allowed rounded-xl py-[13.5px] px-[21.5px] gap-2 flex justify-center items-center  font-semibold ${taskTitle.trim() ? "bg-[#236B53] text-white" : "bg-[#D8E5DD] text-[#63796C]"}`}
         >
-          <span className="size-4 flex justify-center items-center text-[#63796C] ">
+          <span className="size-4 flex justify-center items-center">
             <Plus />
           </span>
           Add task
