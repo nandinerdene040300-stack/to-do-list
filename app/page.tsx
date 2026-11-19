@@ -3,6 +3,7 @@ import { Task } from "@/types";
 import { useState } from "react";
 import { TaskForm, TaskHeader, TaskFilter, TaskItems, TaskList } from "@/components";
 
+
 const page = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [filter, setFilter] = useState("All");
@@ -31,11 +32,13 @@ const page = () => {
   const visibleTasks = tasks.filter((task) => filter === "All" || (filter === "Active" ? !task.completed : task.completed));
 
   return (
-    <div className="w-2xl bg-white rounded-3xl px-8">
-      <TaskHeader />
-      <TaskForm onCreateTask={createTask} />
-      <TaskItems />
-      <TaskFilter tasks={visibleTasks} filter={filter} onFilter={handleFilter} />
+    <div className="w-2xl bg-white rounded-3xl min-h-125">
+      <div className="px-8">
+        <TaskHeader />
+        <TaskForm onCreateTask={createTask} />
+        <TaskItems />
+        <TaskFilter tasks={visibleTasks} filter={filter} onFilter={handleFilter} />
+      </div>
       <TaskList tasks={visibleTasks} hasTasks={tasks.length > 0} onToggle={handleToggle} onDelete={handleDelete} />
     </div>
   );

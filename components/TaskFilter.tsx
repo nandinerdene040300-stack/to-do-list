@@ -16,7 +16,7 @@ export const TaskFilter = ({ tasks, filter, onFilter }: TaskFilterProps) => {
       <div className="flex justify-between pt-14.25 border-b border-[#E9EEEB] pb-2">
         <div className="text-[#7B8680] font-semibold text-sm flex gap-5">
           {["All", "Active", "Completed"].map((item) => (
-            <button onClick={handleClick} id={item} className={`hover:text-[#236B53] ${filter === item && "border-b-2 border-b-green-900"}`} key={item}>
+            <button onClick={handleClick} id={item} className={`hover:text-[#236B53] border-b-2 ${filter === item ? "border-b-green-900" : "border-b-transparent"}`} key={item}>
               {item}
             </button>
           ))}

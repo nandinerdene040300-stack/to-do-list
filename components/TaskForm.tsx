@@ -17,11 +17,11 @@ export const TaskForm = ({ onCreateTask }: TaskFormProps) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit} className="bg-[#F4F8F5] border border-[#DCE9E2] rounded-2xl flex justify-between py-3 px-2">
+      <form onSubmit={handleSubmit} className="bg-[#F4F8F5] space-x-3 border border-[#DCE9E2] rounded-2xl flex justify-between py-3 px-2">
         <input
           onChange={handleChange}
           value={taskTitle}
-          className="text-[#213D35] flex-1 text-base border-none outline-none focus:bg-white rounded-xl"
+          className="px-3 text-[#213D35] flex-1 text-base border-none outline-none focus:bg-white rounded-xl"
           type="text"
           placeholder="What needs to get done? "
         />
